@@ -3,16 +3,16 @@
 int c_count=0;
 %}
 %%
-"/*"[^*/]*"*/" {c_count++;} /*for single and multiple line comments*/
-"//".* {c_count++;} /*for single line comments*/
+"/*"[^*/]*"*/" {c_count++;}
+"//".* {c_count++;} 
 %%
 int main( int argc, char **argv)
 {
 FILE *f1,*f2;
-if(argc>1) /*Pass two filenames for execution*/
+if(argc>1)
 {
-f1=fopen(argv[1],"r"); /*open first file for reading*/
-if(!f1) /*not able to open file*/
+f1=fopen(argv[1],"r"); 
+if(!f1) 
 {
 printf("file error \n");
 exit(1);
